@@ -5,4 +5,6 @@
 	Last  Name 	  : <%= @customer.last_name     %> <br>
 	Email      	  : <%= @customer.email       	%> <br>
 	Mobile Number : <%= @customer.mobile_number %> <br>
+	<%= link_to 'Edit', edit_customer_path(@customer)%>
+	<%= link_to 'Index', customers_path%>
 </p>
