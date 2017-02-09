@@ -5,4 +5,8 @@
 	Price 		: <%= @product.price %><br>
 	Size    	: <%= @product.size %><br>
 	Category 	: <%= @product.category %><br>
+	Updated_at  : <%= @product.updated_at%><br>
+	<%= link_to 'Edit', edit_product_path(@product)%>
+	<%= link_to 'Buy', '#'%>
+	<%= link_to 'Index', products_path%>
 </p>

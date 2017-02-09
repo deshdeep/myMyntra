@@ -1,34 +1,3 @@
 <h1>Add New Product</h1>
 
-<%= form_for @product do |f| %>
-
-<p>
-	<%= f.label      :name%> &nbsp;
-	<%= f.text_field :name%>
-</p>
-
-<p>
-	<%= f.label      :brand%> &nbsp;
-	<%= f.text_field :brand%>
-</p>
-
-<p>
-	<%= f.label      :price%> &nbsp;
-	<%= f.text_field :price%>
-</p>
-
-<p>
-	<%= f.label      :size%> &nbsp;
-	<%= f.text_field :size%>
-</p>
-
-<p>
-	<%= f.label      :category%> &nbsp;
-	<%= f.text_field :category%>
-</p>
-
-<p>
-	<%= f.submit%>
-</p>
-
-<% end %>
+<%= render 'form' %>
