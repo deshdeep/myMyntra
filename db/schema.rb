@@ -14,9 +14,12 @@
 ActiveRecord::Schema.define(version: 20170215113706) do
 
   create_table "carts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "customer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  add_index "carts", ["customer_id"], name: "index_carts_on_customer_id"
 
   create_table "customers", force: :cascade do |t|
     t.string   "first_name"
@@ -79,8 +82,11 @@ ActiveRecord::Schema.define(version: 20170215113706) do
     t.string   "category"
     t.string   "image_link"
     t.integer  "product_quantity"
+    t.integer  "cart_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  add_index "products", ["cart_id"], name: "index_products_on_cart_id"
 
 end
