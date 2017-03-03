@@ -8,6 +8,7 @@ class CreateProducts < ActiveRecord::Migration
 	  t.string :category
 	  t.string :image_link
 	  t.integer :product_quantity
+	  t.belongs_to :cart, index: true
       t.timestamps null: false
     end
   end

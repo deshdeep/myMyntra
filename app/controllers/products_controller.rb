@@ -1,3 +1,4 @@
+require 'byebug'
 class ProductsController < ApplicationController
 	def index
 		@products = Product.all
@@ -16,6 +17,7 @@ class ProductsController < ApplicationController
 	end
 	
 	def create
+#		byebug
 		@product = Product.new(product_params)
 		
 		if @product.save
@@ -44,6 +46,6 @@ class ProductsController < ApplicationController
 	
 private
 		def product_params
-			params.require(:product).permit(:name,:brand,:price,:size,:category) 
+			params.require(:product).permit(:brand,:name,:price,:size,:category) 
 		end
 end
