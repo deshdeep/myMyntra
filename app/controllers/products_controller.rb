@@ -1,4 +1,3 @@
-require 'byebug'
 class ProductsController < ApplicationController
 	def index
 		@products = Product.all
