@@ -4,6 +4,8 @@ gem 'coffee-script-source', '1.8.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
+# Use bootstrap to make app responsive
+gem 'bootstrap-sass'
 # App server
 gem 'puma'
 # Use SCSS for stylesheets
