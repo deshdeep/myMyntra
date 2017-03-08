@@ -8,9 +8,6 @@ gem 'rails', '4.2.5.1'
 # Use bootstrap to make app responsive
 gem 'bootstrap-sass'
 
-# App server
-gem 'puma'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -51,7 +48,10 @@ group :development do
 end
 
 group :production do
+  #Production db
   gem 'pg'
+  #Production server
+  gem 'puma'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
