@@ -7,11 +7,13 @@
 one: 
    first_name: Desh1
    last_name: Deep1
-   email: deshdeep1@gmail.com 
+   email: desh@gmail.com 
    mobile_number: 1234567890
+   password_digest: <%= Customer.digest('password')%>
    
 two:
    first_name: Desh2
    last_name: Deep2
-   email: deshdeep2@gmail.com 
+   email: deep@gmail.com 
    mobile_number: 9087654321
+   password_digest: <%= Customer.digest('password')%>

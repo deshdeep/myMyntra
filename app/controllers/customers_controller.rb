@@ -19,6 +19,8 @@ class CustomersController < ApplicationController
 	def create
 		@customer = Customer.new(customer_params)
 		if @customer.save
+			log_in @customer
+            flash[:success] = "Welcome to myMyntra"
 			redirect_to @customer
 		else
 			render 'new'
@@ -43,6 +45,6 @@ class CustomersController < ApplicationController
 	
 private 
 	def customer_params
-		params.require(:customer).permit(:first_name,:last_name,:email,:mobile_number)
+		params.require(:customer).permit(:first_name,:last_name,:email,:mobile_number,:password,:password_confirmation)
 	end
 end

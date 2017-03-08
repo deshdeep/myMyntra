@@ -1,9 +1,16 @@
 <h1>All Products</h1>
 
-<br>
-<h3>
-<%= link_to 'New',new_product_path%>
-</h3>
+<h4>Already a customer
+<%= link_to 'Login',login_path%>
+</h4>
+
+<h4>Else
+<%= link_to 'SignUp',new_customer_path%>
+</h4>
+
+<h4>
+<%= link_to 'Add new product',new_product_path%>
+</h4>
 <br>
 
 <table>
