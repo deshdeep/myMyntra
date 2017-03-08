@@ -19,6 +19,8 @@ class CustomersController < ApplicationController
 	def create
 		@customer = Customer.new(customer_params)
 		if @customer.save
+			log_in @customer
+            flash[:success] = "Welcome to myMyntra"
 			redirect_to @customer
 		else
 			render 'new'
