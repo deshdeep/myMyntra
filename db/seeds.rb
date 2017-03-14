@@ -10,3 +10,9 @@ i = 1
 for i in (1..100) do
 Product.create(brand: 'rock'+i.to_s, name: 'laptop'+i.to_s, price: 100+i, size: 'medium'+i.to_s, category: 'unisex')
 end
+
+i = 1
+for i in (1..100) do
+Customer.create(first_name: 'desh'+i.to_s, last_name: 'deep'+i.to_s, email: 'deshdeep'+ i.to_s + '@gmail.com', mobile_number:
+				'1234567890', password: 'password', password_confirmation: 'password')
+end

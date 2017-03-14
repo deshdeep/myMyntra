@@ -8,6 +8,10 @@ gem 'rails', '4.2.5.1'
 # Use bootstrap to make app responsive
 gem 'bootstrap-sass'
 
+# Use paginate gems for pagination
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
