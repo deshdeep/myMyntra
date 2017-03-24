@@ -6,15 +6,15 @@ Used rails 4.2.x and ruby 2.1.x(x because I forgot the exact version and upgrade
 This project was created in order to create a common platform for e-commerce website to start form.
 Amateur me didn't know "Spree" back then. In case you are here while searching for some answers on
 e-commerece I would recommend to look into this project https://github.com/spree/spree and 
-https://github.com/Humane-Documentation/Spree(this is just documentation of spree project).
+https://github.com/Humane-Documentation/Spree (this is just documentation of spree project).
 
 Only thing which I might have done extra is instead of using gems like "Devise" and "Cancancan"
 for auth, I implemented it from scratch in this app. I just wanted to learn auth logic.
-I got the understanding and code from https://www.railstutorial.org/book. It's very good book freely
+I got the understanding and code from https://www.railstutorial.org/book . It's very good book freely
 available online.
 
 If you are a newbie and don't know a thing about web dev and decided to start with rails then I would
-recommmend you to go through http://guides.rubyonrails.org/getting_started.html. This will get you started.
+recommmend you to go through http://guides.rubyonrails.org/getting_started.html . This will get you started.
 Just follow each step with whatever you can understand.Then goto https://www.codecademy.com and take course on
 ruby, rails and rails authorization. Along with this read all the docs for models,views and controllers atleast.
 Then create your own blog, cms, e-commerce, etc. You will get hundred of doubts. Use stack
@@ -24,7 +24,7 @@ this read some good book on Ruby if you don't know it already. If don't know pro
 Ruby should be your first task. I knew python and js so it was quite easy on that front. 
 
 If you are confused which project to start. You can get some idea from this list
-https://github.com/ekremkaraca/awesome-rails#apps-made-with-rails.
+https://github.com/ekremkaraca/awesome-rails#apps-made-with-rails .
 
 After doing this much you can jump into any big projects and start solving issues there for starters.
 
