@@ -1,8 +1,11 @@
 class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
-	  t.integer  :order_quantity
-	  t.float    :gross_total
+      t.float    :product_price
+	  t.integer  :quantity
+	  t.float    :total
+	  t.references :customer, index:true, foreign_key:true
+	  t.references :delivery_address, index:true, foreign_key:true
       t.timestamps null: false
     end
   end

@@ -5,10 +5,10 @@ class CreateProducts < ActiveRecord::Migration
 	  t.string :name
 	  t.float  :price
 	  t.string :size
-	  t.string :category
-	  t.string :image_link
-	  t.integer :product_quantity
-	  t.belongs_to :cart, index: true
+	  t.string :color
+	  t.references :order, index:true, foreign_key:true
+	  t.references :cart, index:true, foreign_key:true
+	  t.references :category, index:true, foreign_key:true
       t.timestamps null: false
     end
   end

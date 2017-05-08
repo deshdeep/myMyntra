@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314102055) do
+ActiveRecord::Schema.define(version: 20170507171741) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "customer_id"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20170314102055) do
   end
 
   add_index "carts", ["customer_id"], name: "index_carts_on_customer_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string   "first_name"
@@ -35,63 +41,45 @@ ActiveRecord::Schema.define(version: 20170314102055) do
 
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true
 
-  create_table "customers_orders", id: false, force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "order_id"
-  end
-
-  add_index "customers_orders", ["customer_id"], name: "index_customers_orders_on_customer_id"
-  add_index "customers_orders", ["order_id"], name: "index_customers_orders_on_order_id"
-
-  create_table "customers_products", id: false, force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "customer_id"
-  end
-
-  add_index "customers_products", ["customer_id"], name: "index_customers_products_on_customer_id"
-  add_index "customers_products", ["product_id"], name: "index_customers_products_on_product_id"
-
   create_table "delivery_addresses", force: :cascade do |t|
-    t.text     "delivery_address"
-    t.string   "delivery_email"
-    t.string   "delivery_mobile_number"
+    t.text     "address"
+    t.string   "email"
+    t.string   "mobile_number"
     t.integer  "customer_id"
-    t.integer  "order_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "delivery_addresses", ["customer_id"], name: "index_delivery_addresses_on_customer_id"
-  add_index "delivery_addresses", ["order_id"], name: "index_delivery_addresses_on_order_id"
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "order_quantity"
-    t.float    "gross_total"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.float    "product_price"
+    t.integer  "quantity"
+    t.float    "total"
+    t.integer  "customer_id"
+    t.integer  "delivery_address_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
-  create_table "orders_products", id: false, force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "order_id"
-  end
-
-  add_index "orders_products", ["order_id"], name: "index_orders_products_on_order_id"
-  add_index "orders_products", ["product_id"], name: "index_orders_products_on_product_id"
+  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id"
+  add_index "orders", ["delivery_address_id"], name: "index_orders_on_delivery_address_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "brand"
     t.string   "name"
     t.float    "price"
     t.string   "size"
-    t.string   "category"
-    t.string   "image_link"
-    t.integer  "product_quantity"
+    t.string   "color"
+    t.integer  "order_id"
     t.integer  "cart_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "products", ["cart_id"], name: "index_products_on_cart_id"
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
+  add_index "products", ["order_id"], name: "index_products_on_order_id"
 
 end

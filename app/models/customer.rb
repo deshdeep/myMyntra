@@ -1,11 +1,12 @@
 class Customer < ActiveRecord::Base
 	attr_accessor :remember_token
 	before_save { self.email = email.downcase }
-	has_and_belongs_to_many :products
-	has_and_belongs_to_many :orders
-	has_one :cart
+    
 	has_many :delivery_addresses
-	
+	has_many :orders
+	has_many :products through: :orders
+	has_one  :cart
+
 	validates :first_name, presence: true
 	validates :mobile_number, numericality: {only_integer: true}, length: {is: 10}
 	

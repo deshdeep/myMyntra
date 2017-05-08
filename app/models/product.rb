@@ -1,7 +1,8 @@
 class Product < ActiveRecord::Base
-	has_and_belongs_to_many :orders
-	has_and_belongs_to_many :customers
+	belongs_to :order
 	belongs_to :cart
-	validates :brand, :name, :size, :category, presence: true
+	belongs_to :category
+
+	validates :brand, :name, :size, :color, presence: true
 	validates :price, numericality: true, presence: true
 end
